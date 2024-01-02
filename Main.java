@@ -4,5 +4,8 @@ public class Main {
         Hotel myHotel = new Hotel();
         myHotel.name = "Holiday Inn";
         myHotel.showName();
+
+        // Accediendo de forma publica
+        System.out.println("Estrellas:" + myHotel.stars);
     }
 }
