@@ -1,37 +1,39 @@
 public class Hotel { // Clase
-    static int id;
+
+    static int id;  // Variable estática para el ID del hotel
+
     // Atributos
-    String name;
-    String address;
-    int stars;
+    String nombre;     // Nombre del hotel
+    String direccion;  // Dirección del hotel
+    int estrellas;       // Número de estrellas del hotel
 
-    // Metodo constructor
+    // Nuevo constructor que acepta detalles del hotel al momento de la creación
+    public Hotel(String nombre, String direccion, int estrellas) {
+        this(); // Llama al constructor por defecto para incrementar el ID
+        this.nombre = nombre;
+        this.direccion = direccion;
+        this.estrellas = estrellas;
+    }
 
-    Hotel(){
-        System.out.println("-- Construyendo Hotel --");
+    // Constructor por defecto que incrementa el ID del hotel
+    public Hotel() {
+        // Se incrementa el ID cada vez que se crea un nuevo objeto Hotel
         id++;
     }
 
     // Metodos
     public void showName(){
-        System.out.println(name);
+        System.out.println(nombre);
     }
     public void showId(){
         System.out.println("ID Hotel: " + id);
     }
 
-    public Object showDetails(){
-        System.out.println("Nombre:" + this.name);
-        System.out.println("Dirección:" + this.address);
-        System.out.println("Estrellas:" + this.stars);
-        return null;
-    }
-
     public String showDetails2(){
         StringBuilder sb = new StringBuilder();
-        sb.append("Nombre:" + this.name);
-        sb.append("\nDirección:" + this.address);
-        sb.append("\nEstrellas:" + this.stars);
+        sb.append("Nombre:" + this.nombre);
+        sb.append("\nDirección:" + this.direccion);
+        sb.append("\nEstrellas:" + this.estrellas);
         return sb.toString();
     }
 }
