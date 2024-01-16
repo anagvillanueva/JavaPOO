@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SistemaHotelero {
-    private List<Hotel> hotelesVisitados;
+    List<Hotel> hotelesVisitados;
 
     // Constructor de la clase SistemaHotelero
     public SistemaHotelero() {
