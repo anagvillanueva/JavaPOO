@@ -3,16 +3,17 @@ public class Hotel { // Clase
     static int id;  // Variable estática para el ID del hotel
 
     // Atributos
-    String nombre;     // Nombre del hotel
-    String direccion;  // Dirección del hotel
-    int estrellas;       // Número de estrellas del hotel
+    String name;
+    String address;
+    int stars;
+    int numberOfRooms;
 
     // Nuevo constructor que acepta detalles del hotel al momento de la creación
-    public Hotel(String nombre, String direccion, int estrellas) {
+    public Hotel(String name, String address, int stars) {
         this(); // Llama al constructor por defecto para incrementar el ID
-        this.nombre = nombre;
-        this.direccion = direccion;
-        this.estrellas = estrellas;
+        this.name = name;
+        this.address = address;
+        this.stars = stars;
     }
 
     // Constructor por defecto que incrementa el ID del hotel
@@ -23,7 +24,7 @@ public class Hotel { // Clase
 
     // Metodos
     public void showName(){
-        System.out.println(nombre);
+        System.out.println(name);
     }
     public void showId(){
         System.out.println("ID Hotel: " + id);
@@ -31,9 +32,14 @@ public class Hotel { // Clase
 
     public String showDetails2(){
         StringBuilder sb = new StringBuilder();
-        sb.append("Nombre:" + this.nombre);
-        sb.append("\nDirección:" + this.direccion);
-        sb.append("\nEstrellas:" + this.estrellas);
+        sb.append("Nombre:" + this.name);
+        sb.append("\nDirección:" + this.address);
+        sb.append("\nEstrellas:" + this.stars);
         return sb.toString();
+    }
+
+    // Método estático para obtener el próximo ID disponible
+    public static int getNextId() {
+        return id + 1;
     }
 }
