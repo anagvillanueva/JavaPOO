@@ -3,22 +3,22 @@ import java.util.List;
 
 public class Hotel { // Clase
 
-    static int id;  // Variable estática para el ID del hotel
+    private static int id = 0;  // Variable estática para el ID del hotel
 
     // Atributos
-    String name;
-    String address;
-    int stars;
-    int numberOfRooms;
+    private String name;
+    private String address;
+    private int stars;
+    private int numberOfRooms;
+
+    //Nueva lista para almacenar las actividades del hotel
+    private List<Actividad> actividades;
 
     // Constructor por defecto que incrementa el ID del hotel
     public Hotel() {
         // Se incrementa el ID cada vez que se crea un nuevo objeto Hotel
         id++;
     }
-
-    //Nueva lista para almacenar las actividades del hotel
-    private List<Actividad> actividades;
 
     // Nuevo constructor que acepta detalles del hotel al momento de la creación
     public Hotel(String name, String address, int stars) {
@@ -29,13 +29,48 @@ public class Hotel { // Clase
         this.actividades = new ArrayList<>(); // Inicializa la lista de actividades
     }
 
-    // Metodos
+    // Metodos de Getter y Setter
+    public String getName(){
+        return name;
+    }
+    public void setName(String name){
+        this.name = name;
+    }
 
+    public String getAddress(){
+        return address;
+    }
+
+    public void setAddress(String address){
+        this.address = address;
+    }
+
+    public int getStars(){
+        return stars;
+    }
+
+    public void setStars(int stars){
+        this.stars = stars;
+    }
+
+    public int getNumberOfRooms(){
+        return numberOfRooms;
+    }
+
+    public void setNumberOfRooms(int numberOfRooms){
+        this.numberOfRooms = numberOfRooms;
+    }
+
+    //Metodo getter para obtener lista de actividades
+    public List<Actividad> getActividades(){
+        return this.actividades;
+    }
     //Metodo para agregar actividad al hotel
+
     public void agregarActividad(String name, String description){
         Actividad nuevaActividad = new Actividad(name,description);
         actividades.add(nuevaActividad);
-        System.out.println("Actividad agregada al hotel: " + nuevaActividad.name);
+        System.out.println("Actividad agregada al hotel: " + nuevaActividad.getName());
     }
 
     //Metodo para mostrar las actividades
