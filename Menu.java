@@ -110,7 +110,6 @@ public class Menu {
     private void agregarActividadesAlHotel(String nombreHotel) {
         // Inicializar una variable Hotel como nula para almacenar el hotel encontrado
         Hotel hotel = null;
-
         // Iterar a través de la lista de hoteles visitados en el sistema
         for (Hotel h : sistema.getHotelesVisitados()) {
             // Verificar si el nombre del hotel actual coincide con el proporcionado

@@ -8,7 +8,8 @@ public class Motel extends Hotel{
     }
 
     //Metodo para mi Motel
-    public void ofrecerServicioDeMotel(){
+    @Override
+    public void ofrecerServicio(){
         System.out.println("Bienvenido al motel: " + getName());
         System.out.println("Ofrecemos servicios especiales para parejas.");
         if(tieneEstacionamiento){

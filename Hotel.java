@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Hotel { // Clase
+public abstract class Hotel { // Clase
 
     private static int id = 0;  // Variable estática para el ID del hotel
 
@@ -67,6 +67,12 @@ public class Hotel { // Clase
     }
     //Metodo para agregar actividad al hotel
 
+    //Metodo - Ejemplo polimorfismo
+    public void OfrecerServicio(){
+        System.out.println("Bienvenido al hotel: " + getName());
+        System.out.println("Ofrecemos servicios generales para familias.");
+    }
+
     public void agregarActividad(String name, String description){
         Actividad nuevaActividad = new Actividad(name,description);
         actividades.add(nuevaActividad);
@@ -100,4 +106,7 @@ public class Hotel { // Clase
     public static int getNextId() {
         return id + 1;
     }
+
+    //Metodo para mi Motel
+    public abstract void ofrecerServicio();
 }
